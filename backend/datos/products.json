@@ -4,12 +4,12 @@
     "title": "Polera Freezer Final Form",
     "description": "Polera de Freezer en su forma final",
     "code": "DBZ003",
-    "price": 20000,
-    "status": true,
-    "stock": 30,
+    "price": "20000",
+    "status": "true",
+    "stock": "30",
     "category": "Poleras",
     "thumbnails": [
-      "path/to/freezer_final.jpg"
+      "uploads\\1718935761601-Polera_Golden_Freezer_2.png"
     ]
   },
   {
@@ -21,6 +21,8 @@
     "status": "true",
     "stock": "25",
     "category": "Polera",
-    "thumbnails": []
+    "thumbnails": [
+      "uploads\\1718935773861-dragon-ball-goku-03-660442.jpg"
+    ]
   }
 ]

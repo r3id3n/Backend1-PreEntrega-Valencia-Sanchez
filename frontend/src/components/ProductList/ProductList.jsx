@@ -44,7 +44,7 @@ function ProductList() {
             <p>Category: {product.category}</p>
             {product.thumbnails.length > 0 && (
               <img
-                src={`/${product.thumbnails[0]}`}
+                src={product.thumbnails[0]}
                 alt={product.title}
                 className="w-full h-32 object-cover mt-2"
               />

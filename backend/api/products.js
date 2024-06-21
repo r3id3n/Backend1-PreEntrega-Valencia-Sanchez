@@ -8,7 +8,7 @@ const productsFilePath = path.join(__dirname, "../datos/products.json");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads/");
+    cb(null, path.join(__dirname, "../uploads"));
   },
   filename: (req, file, cb) => {
     cb(null, `${Date.now()}-${file.originalname}`);
@@ -52,7 +52,7 @@ router.post("/", upload.single("thumbnail"), (req, res) => {
     status: req.body.status !== undefined ? req.body.status : true,
     stock: req.body.stock,
     category: req.body.category,
-    thumbnails: req.file ? [req.file.path] : [],
+    thumbnails: req.file ? [`/uploads/${req.file.filename}`] : [],
   };
   products.push(newProduct);
   writeProductsToFile(products);
@@ -66,9 +66,9 @@ router.put("/:pid", upload.single("thumbnail"), (req, res) => {
   );
   if (productIndex !== -1) {
     const updatedProduct = { ...products[productIndex], ...req.body };
-    updatedProduct.id = products[productIndex].id; // No actualizar el ID
+    updatedProduct.id = products[productIndex].id;
     if (req.file) {
-      updatedProduct.thumbnails = [req.file.path];
+      updatedProduct.thumbnails = [`/uploads/${req.file.filename}`];
     }
     products[productIndex] = updatedProduct;
     writeProductsToFile(products);
