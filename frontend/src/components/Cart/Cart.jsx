@@ -49,7 +49,7 @@ function Cart() {
     if (!cart) return { totalQuantity: 0, totalPrice: 0 };
     const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
     const totalPrice = cart.reduce(
-      (sum, item) => sum + item.quantity * item.price,
+      (sum, item) => sum + item.quantity * (item.price || 0),
       0
     );
     return { totalQuantity, totalPrice };
@@ -93,7 +93,13 @@ function Cart() {
       <div className="mt-8 p-4 bg-gray-100 rounded shadow">
         <h2 className="text-2xl font-bold">Cart Summary</h2>
         <p>Total Products: {totalQuantity}</p>
-        <p>Total Price: ${totalPrice.toFixed(2)}</p>
+        <p>
+          Total Price:{" "}
+          {totalPrice.toLocaleString("es-CL", {
+            style: "currency",
+            currency: "CLP",
+          })}
+        </p>
       </div>
     </div>
   );
