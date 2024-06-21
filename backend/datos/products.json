@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Polera Freezer Final Form",
+    "description": "Polera de Freezer en su forma final",
+    "code": "DBZ003",
+    "price": 20000,
+    "status": true,
+    "stock": 30,
+    "category": "Poleras",
+    "thumbnails": [
+      "path/to/freezer_final.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Polera de Goku Super Saiyan 2",
+    "description": "Polera de goku para hacer ejercicios y lucir ",
+    "code": "DBZ001",
+    "price": "20000",
+    "status": "true",
+    "stock": "25",
+    "category": "Polera",
+    "thumbnails": []
+  }
+]
