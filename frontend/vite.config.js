@@ -17,6 +17,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
+    base: '/',
     server: {
       proxy: env.NODE_ENV === 'production' ? {} : { // Proxy solo en desarrollo
         '/api': 'http://localhost:8080',
